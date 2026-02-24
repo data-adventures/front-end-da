@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Database, Menu, X, ArrowRight } from 'lucide-react';
-// import { useRouter } from 'next/navigation';
 
 // ✅ Definisikan props
 interface NavbarProps {
@@ -22,12 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({
   onMenuToggle,
   showSystemStatus = false,
 }) => {
-//   const router = useRouter();
-
-  const handleDatabase = () => {
-    router.push('/database');
-  };
-
   const navItems = [
     { label: 'Platform', href: '#platform' },
     { label: 'Solutions', href: '#solutions' },
@@ -89,7 +82,6 @@ const Navbar: React.FC<NavbarProps> = ({
               {/* Desktop CTA Button */}
               <button
                 onClick={() => {
-                  handleDatabase();
                   onPageChange?.('/database');
                 }}
                 className="hidden lg:flex bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 items-center space-x-2 shadow-lg"
@@ -126,7 +118,6 @@ const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => {
                     onPageChange?.('/database');
                     onMenuToggle?.();
-                    handleDatabase();
                   }}
                   className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg mt-4"
                 >
